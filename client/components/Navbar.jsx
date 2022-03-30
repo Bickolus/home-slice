@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Narbar = () => {
+const Navbar = () => {
   return (
     <div>
         
@@ -8,4 +8,4 @@ const Narbar = () => {
   )
 }
 
-export default Narbar
+export default Navbar
