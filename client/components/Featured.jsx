@@ -1,7 +1,5 @@
 import Image from 'next/image'
 import styles from "../styles/Featured.module.css";
-// import "~slick-carousel/slick/slick.css";
-// import "~slick-carousel/slick/slick-theme.css";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import React, { Component } from "react";
@@ -13,33 +11,25 @@ class Featured extends Component {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 1,
+      slidesToShow: 2,
       slidesToScroll: 1
     };
 
     return (
-      <div>
-        <h2> Single Item</h2>
+      <div className={styles.container}>
+        <div className={styles.wrappera}>
         <Slider {...settings}>
-          <div>
-            <h3>1</h3>
+          <div className={styles.imgContainer}>
+            <Image src='/img/featured.png' width='800' height='800' alt="" objectFit="fill" />
           </div>
-          <div>
-            <h3>2</h3>
+          <div className={styles.imgContainer}>
+          <Image src='/img/featured2.png' width='800' height='800' alt=""  objectFit="fill" />
           </div>
-          <div>
-            <h3>3</h3>
-          </div>
-          <div>
-            <h3>4</h3>
-          </div>
-          <div>
-            <h3>5</h3>
-          </div>
-          <div>
-            <h3>6</h3>
+          <div className={styles.imgContainer}>
+          <Image src='/img/featured3.png' width='800' height='800' alt=""  objectFit="fill" />
           </div>
         </Slider>
+        </div>
       </div>
     );
   }
