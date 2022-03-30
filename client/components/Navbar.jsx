@@ -14,12 +14,13 @@ const Navbar = () => {
           <div className={styles.texts}> ORDER NOW! </div>
           <div className={styles.texts}> phone number here </div>
         </div>
-        <div className={styles.item}></div>
-        <div className={styles.item}></div>
+      </div>
+      <div className={styles.item}>d</div>
+      <div className={styles.item}>dd</div>
 
-      </div>
-      </div>
-      )
+
+    </div>
+  )
 }
 
-      export default Navbar
+export default Navbar
