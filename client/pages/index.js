@@ -11,7 +11,7 @@ export default function Home() {
         <meta name="description" content="Best Pizza In Town" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Featured/>
+      <Featured />
     </div>
   )
 }
