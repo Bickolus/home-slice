@@ -1,4 +1,6 @@
 import React from 'react'
+import styles from '../styles/PizzaCard.module.css';
+import Image from 'next/image';
 
 const PizzaCard = () => {
   return (
