@@ -4,16 +4,14 @@ import Image from 'next/image';
 
 const PizzaCard = () => {
   return (
-    <div>
         <div className={styles.container}>
-            <Image src="/img/pizza.png" alt="pizza" width="500" height="500" />
+            <Image src="/img/pizza.png" alt="pizza" width="900" height="900" />
             <h1 className={styles.title}>FIORI DI ZUCCA</h1>
             <span className={styles.price}>$19.90</span>
             <p className={styles.desc}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </p>
         </div>
-    </div>
   )
 }
 
