@@ -11,16 +11,29 @@ const Navbar = () => {
 
         </div>
         <div className={styles.texts}>
-          <div className={styles.texts}> ORDER NOW! </div>
-          <div className={styles.texts}> phone number here </div>
+          <div className={styles.text}> ORDER NOW! </div>
+          <div className={styles.text}> phone number here </div>
         </div>
       </div>
-      <div className={styles.item}>d</div>
-      <div className={styles.item}>dd</div>
-
-
+      <div className={styles.item}>
+        <ul className={styles.list}>
+          <li className={styles.listItem}>Homepage</li>
+          <li className={styles.listItem}>Products</li>
+          <li className={styles.listItem}>Menu</li>
+         {/* insert image here */}
+          <li className={styles.listItem}>Events</li>
+          <li className={styles.listItem}>Blog</li>
+          <li className={styles.listItem}>Contact</li>
+        </ul>
+      </div>
+      <div className={styles.item}>
+        <div className={styles.cart}>
+          {/* imsert image here */}
+          <div className={styles.counter}>2</div>
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default Navbar
