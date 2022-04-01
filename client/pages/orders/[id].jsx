@@ -81,13 +81,13 @@ const Order = () => {
                 <div className={styles.wrapper}>
                     <h2 className={styles.title}>CART TOTAL</h2>
                     <div className={styles.totalText}>
-                        <b className={styles.totalTextTitle}>Subtotal:</b>${cart.total}
+                        <b className={styles.totalTextTitle}>Subtotal:</b>$
                     </div>
                     <div className={styles.totalText}>
                         <b className={styles.totalTextTitle}>Discount:</b>$0.00
                     </div>
                     <div className={styles.totalText}>
-                        <b className={styles.totalTextTitle}>Total:</b>${cart.total}
+                        <b className={styles.totalTextTitle}>Total:</b>$
                     </div>
                     <button disabled className={styles.button}>
                         PAID
