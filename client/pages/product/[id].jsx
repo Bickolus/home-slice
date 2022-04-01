@@ -29,7 +29,7 @@ const Product = () => {
             <Image src="/img/size.png" layout="fill" alt="pizza" />
             <span className={styles.number}>Small</span>
           </div>
-          <div className={styles.size}onClick={() => setSize(1)}>
+          <div className={styles.size} onClick={() => setSize(1)}>
             <Image src="/img/size.png" layout="fill" alt="pizza" />
             <span className={styles.number}>Medium</span>
           </div>
@@ -84,6 +84,17 @@ const Product = () => {
       </div>
     </div>
   )
-}
+};
+
+export const getServerSideProps = async ({ params }) => {
+  const res = await axios.get(
+    `http://localhost:3000/api/products/${params.id}`
+  );
+  return {
+    props: {
+      pizza: res.data,
+    },
+  };
+};
 
 export default Product
