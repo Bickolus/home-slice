@@ -1,26 +1,30 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "home-slice",
   "main": "server.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "watch": "nodemon server.js",
-    "seed": "node config/seeds.js"
+    "server": "nodemon server.js"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bickolus/home-slice.git"
+  },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "apollo-server-express": "^3.6.6",
-    "bcrypt": "^5.0.1",
-    "express": "^4.17.1",
-    "graphql": "^16.3.0",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.10",
-    "stripe": "^8.67.0"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Bickolus/home-slice/issues"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.3"
+  "homepage": "https://github.com/Bickolus/home-slice#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "concurrently": "^7.1.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.9",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15"
   }
 }

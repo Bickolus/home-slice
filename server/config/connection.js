@@ -1,8 +1,18 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/home-slice', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+const connectDB = async () => {
+   try {
+       const url = process.env.MONGO_URI
+       const connection = await mongoose.connect(url, {
+        useUnifiedTopology: true,
+        useNewUrlParser: true,
+       })
+       console.log (`mongodb connected`)
 
-module.exports = mongoose.connection;
+   } catch (error) {
+       console.log(`error: ${error.message}`)
+
+   }
+};
+
+module.exports = connectDB;
