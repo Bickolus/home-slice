@@ -1,4 +1,4 @@
-const pizzas = [
+const Pizzas = [
   {
     name: "Margherita",
     sizes: ["Small", "Medium", "Large"],
@@ -89,4 +89,4 @@ const pizzas = [
       "The wholesome flavour of tandoori masala with Chicken tikka, onion, red paprika & mint mayo",
   },
 ];
-export default pizzas;
+module.exports = Pizzas;

@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const connectDB = require('./config/connection')
 const dotenv = require("dotenv");
 require('colors');
+const routes = require("../server/routes");
 
 
 
@@ -25,7 +26,7 @@ app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: true }));
 
 
-
+app.use(routes);
 
 
 
