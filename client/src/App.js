@@ -8,6 +8,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Policy from "./components/Policy";
 import Homepage from "./pages/Homepage";
+import CartPage from "./pages/Cart";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       <TopBar />
       <NavBar />
       <Switch>
-        <Route path="/about" component={About} exact />
+        <Route path="/cart" component={CartPage} exact />
         <Route path="/contact" component={Contact} exact />
         <Route path="/policy" component={Policy} exact />
         <Route path="/" component={Homepage} />
