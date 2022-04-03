@@ -4,9 +4,9 @@ const Pizzas = [
     sizes: ["Small", "Medium", "Large"],
     prices: [
       {
-        Small: 99,
-        Medium: 199,
-        Large: 399,
+        Small: 6.99,
+        Medium: 7.99,
+        Large: 8.99,
       },
     ],
     category: "Vegetarian",
@@ -18,9 +18,9 @@ const Pizzas = [
     sizes: ["Small", "Medium", "Large"],
     prices: [
       {
-        Small: 229,
-        Medium: 399,
-        Large: 599,
+        Small: 7.99,
+        Medium: 8.99,
+        Large: 9.99,
       },
     ],
     category: "Vegetarian",
@@ -33,9 +33,9 @@ const Pizzas = [
     sizes: ["Small", "Medium", "Large"],
     prices: [
       {
-        Small: 180,
-        Medium: 290,
-        Large: 460,
+        Small: 8.99,
+        Medium: 9.99,
+        Large: 10.99,
       },
     ],
     category: "Vegetarian",
@@ -48,9 +48,9 @@ const Pizzas = [
     sizes: ["Small", "Medium", "Large"],
     prices: [
       {
-        Small: 249,
-        Medium: 349,
-        Large: 599,
+        Small: 9.99,
+        Medium: 10.99,
+        Large: 11.99,
       },
     ],
     category: "Non-Vegetarian",
@@ -63,9 +63,9 @@ const Pizzas = [
     sizes: ["Small", "Medium", "Large"],
     prices: [
       {
-        Small: 320,
-        Medium: 580,
-        Large: 800,
+        Small: 7.99,
+        Medium: 8.99,
+        Large: 9.99,
       },
     ],
     category: "Non-Vegetarian",
@@ -78,15 +78,30 @@ const Pizzas = [
     sizes: ["Small", "Medium", "Large"],
     prices: [
       {
-        Small: 250,
-        Medium: 380,
-        Large: 500,
+        Small: 9.99,
+        Medium: 10.99,
+        Large: 11.99,
       },
     ],
     category: "Non-Vegetarian",
     image: "/images/IndianTandooriChickenTikka.jpg",
     description:
       "This is what being Desi is all about! Tandoori masala with chicken tikka, onion, red paprika & mint mayo.",
+  },
+  {
+    name: "The Sal Special",
+    sizes: ["Small", "Medium", "Large"],
+    prices: [
+      {
+        Small: 699.99,
+        Medium: 799.99,
+        Large: 899.99,
+      },
+    ],
+    category: "Non-Vegetarian",
+    image: "/images/TheSalSpecial.jpg",
+    description:
+      "An eggplant and parmasean cheese pizza that is known you make you better at coding when eaten. It takes a special person to order this one. Are you that person?",
   },
 ];
 module.exports = Pizzas;
