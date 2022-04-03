@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Pizza = require('../models/Pizza');
 
-//get all pizzas route
+// Get all pizzas route
 router.get("/allpizzas", async (req, res) => {
     try {
       const pizzas = await Pizza.find({});
