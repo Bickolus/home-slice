@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Pizza = require('../models/Pizza');
 
-//get all pizzas route
+// Get all pizzas route
 router.get("/allpizzas", async (req, res) => {
     try {
       const pizzas = await Pizza.find({});
@@ -18,7 +18,7 @@ router.post("/addpizza", async (req, res) => {
       const newPizza = new Pizza({
         name: pizza.name,
         image: pizza.image,
-        varients: ["small", "medium", "larg"],
+        sizes: ["Small", "Medium", "Large"],
         description: pizza.description,
         category: pizza.category,
         prices: [pizza.prices],
@@ -29,7 +29,5 @@ router.post("/addpizza", async (req, res) => {
       res.json({ message: error });
     }
   });
-
-  
 
 module.exports = router;

@@ -5,16 +5,17 @@ const dotenv = require("dotenv");
 require('colors');
 const routes = require("../server/routes");
 
+const PORT = process.env.PORT || 3001;
 
 
 // const routes = require("./routes");
 // const path = require("path");
 // const { authMiddleware } = require("./utils/auth");
 
-//config dotenv
+// Config dotenv
 dotenv.config();
 
-//connection mongodb
+// Connection to MongoDB
 connectDB();
 
 
@@ -26,11 +27,10 @@ app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: true }));
 
 
-app.use(routes);
-
-
-
-
+// Route
+app.use("/api/pizzas", require("./routes/pizzaRoute"));
+app.use("/api/users", require("./routes/userRoute"));
+app.use("/api/orders", require("./routes/orderRoute"));
 
 
 // app.use(routes);
@@ -38,10 +38,9 @@ app.get("/", (req, res) => {
     res.send("<h1>Hello From Node Server grrrrrrrrrrBOW!!! </h1>");
   });
 
-const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(
-    `Server Running On ${process.env.NODE_ENV} mode on PORT ${PORT}`
+    `Server running on ${process.env.NODE_ENV} mode on PORT ${PORT}!`
       
   );
 });
