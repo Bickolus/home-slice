@@ -28,7 +28,7 @@ const Checkout = ({ subTotal }) => {
       stripeKey="pk_test_51Kj4sRDoo0o8MzWPn2WTJYgD1uMY50IS9n5xlwAvgms5WdlgNieq32ML5RPfAVwY1NnIxZAbTk8brrdX5S2uDLsk00eLrzEMRg"
       currency="CAD"
     >
-      <Button>Pay with Card</Button>
+      <Button style={{backgroundColor: '#CB3B14'}}>Pay with Card</Button>
     </StripeCheckout>
     </>
   );
