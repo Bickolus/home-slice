@@ -6,20 +6,25 @@ import { getAllPizzas } from '../actions/pizzaAction'
 import Pizza from "../components/Pizza";
 
 const Homepage = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const pizzastate = useSelector(state => state.getAllPizzaReducer);
+  const { loading, pizzas, error } = pizzastate;
 
   useEffect(() => {dispatch(getAllPizzas());
   } , [dispatch]);
   return (
     <>
       <Container>
-        <Row>
-          {pizzaData.map((pizza) => (
-            <Col md={4}>
-              <Pizza pizza={pizza} />
-            </Col>
-          ))}
-        </Row>
+        {loading ? (<h1>Loading...</h1>)
+          : error ? (<h1>error while fetching.. </h1>)
+          : ( <Row>
+            {pizzaData.map((pizza) => (
+              <Col md={4}>
+                <Pizza pizza={pizza} />
+              </Col>
+            ))}
+          </Row>
+          )}
       </Container>
     </>
   );
