@@ -1,45 +1,46 @@
-const express = require("express");
-const { ApolloServer } = require("apollo-server-express");
-const path = require("path");
-const { authMiddleware } = require("./utils/auth");
+const express = require('express');
+const morgan = require('morgan');
+const connectDB = require('./config/connection')
+const dotenv = require("dotenv");
+require('colors');
 
-const { typeDefs, resolvers } = require("./schemas");
-const db = require("./config/connection");
 
-const PORT = process.env.PORT || 3001;
+
+// const routes = require("./routes");
+// const path = require("path");
+// const { authMiddleware } = require("./utils/auth");
+
+//config dotenv
+dotenv.config();
+
+//connection mongodb
+connectDB();
+
+
 const app = express();
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-  context: authMiddleware,
-});
 
-app.use(express.urlencoded({ extended: false }));
+//middlewares
 app.use(express.json());
+app.use(morgan("dev"));
+app.use(express.urlencoded({ extended: true }));
 
-// if we're in production, serve client/build as static assets
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../client/build")));
-}
 
+
+
+
+
+
+
+
+// app.use(routes);
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
-
-// Create a new instance of an Apollo server with the GraphQL schema
-const startApolloServer = async (typeDefs, resolvers) => {
-  await server.start();
-  server.applyMiddleware({ app });
-
-  db.once("open", () => {
-    app.listen(PORT, () => {
-      console.log(`API server running on port ${PORT}!`);
-      console.log(
-        `Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`
-      );
-    });
+    res.send("<h1>Hello From Node Server grrrrrrrrrrBOW!!! </h1>");
   });
-};
 
-// Call the async function to start the server
-startApolloServer(typeDefs, resolvers);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(
+    `Server Running On ${process.env.NODE_ENV} mode on PORT ${PORT}`
+      
+  );
+});

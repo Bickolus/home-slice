@@ -1,19 +1,36 @@
-const { Schema, model } = require("mongoose");
+const mongoose = require("mongoose");
 
-// Create order schema and make sure it includes date ordered and an array of pizzas
-const orderSchema = new Schema({
-  orderDate: {
-    type: Date,
-    default: Date.now,
-  },
-  pizzas: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Pizza",
+const orderSchema = mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: [true, "order name required"],
     },
-  ],
-});
+    email: {
+      type: String,
+      required: [true, "email is required"],
+    },
+    userid: {
+      type: String,
+    },
+    orderItems: [],
+    shippingAddress: {
+      type: Object,
+    },
+    orderAmount: {
+      type: String,
+      //   required: true,
+    },
+    isDelivered: {
+      type: Boolean,
+      default: false,
+    },
+    transactionId: {
+      type: String,
+      //   required: true,
+    },
+  },
+  { timestamps: true }
+);
 
-const Order = model("Order", orderSchema);
-
-module.exports = Order;
+module.exports = mongoose.model("order", orderSchema);
