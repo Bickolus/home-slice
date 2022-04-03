@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import { Card, Button, Row, Col, Modal } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../actions/cartAction";
 
 const Pizza = ({ pizza }) => {
-  const [size, setSize] = useState("Small");
+  const [sizes, setSizes] = useState("Small");
   const [quantity, setQuantity] = useState(1);
   const [show, setShow] = useState(false);
+  
+  const dispatch = useDispatch();
+  const addToCartHandler = () => {
+    dispatch(addToCart(pizza, quantity, sizes));
+  };
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -26,9 +33,9 @@ const Pizza = ({ pizza }) => {
             <Row>
               <Col md={6}>
                 <h6>Size</h6>
-                <select value={size} onChange={(e) => setSize(e.target.value)}>
+                <select value={sizes} onChange={(e) => setSizes(e.target.value)}>
                   {pizza.sizes.map((size) => (
-                    <option>{size}</option>
+                    <option key ={size}>{size}</option>
                   ))}
                 </select>
               </Col>
@@ -46,9 +53,11 @@ const Pizza = ({ pizza }) => {
             </Row>
           </Card.Text>
           <Row>
-            <Col md={6}>Price: ${pizza.prices[0][size] * quantity}</Col>
+            <Col md={6}>Price: ${pizza.prices[0][sizes] * quantity} CAD</Col>
             <Col md={6}>
-              <Button className="bg-primary text-white">Add to Cart</Button>
+              <Button 
+              onClick={addToCartHandler}
+              className="bg-primary text-white">Add to Cart</Button>
             </Col>
           </Row>
         </Card.Body>

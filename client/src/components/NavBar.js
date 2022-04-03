@@ -1,8 +1,11 @@
 import React from "react";
 import { Navbar, Nav, Container, Image } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 import { LinkContainer } from "react-router-bootstrap";
 
 const NavBar = () => {
+  const dispatch = useDispatch();
+  const cartState = useSelector((state) => state.cartReducer);
   return (
     <>
       <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
@@ -17,7 +20,7 @@ const NavBar = () => {
                 <Nav.Link>Login</Nav.Link>
               </LinkContainer>
               <LinkContainer to="/cart">
-                <Nav.Link>Cart</Nav.Link>
+                <Nav.Link>Cart {cartState.cartItems.length} </Nav.Link>
               </LinkContainer>
             </Nav>
           </Navbar.Collapse>
