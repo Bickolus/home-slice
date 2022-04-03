@@ -5,12 +5,15 @@ import { composeWithDevTools } from "redux-devtools-extension";
 // Import from reducers folder
 import { getAllPizzaReducer } from "./reducers/pizzaReducer";
 import { cartReducer } from "./reducers/cartReducer";
+import { registerUserReducer, loginUserReducer } from "./reducers/userReducer";
 
 // Uses all reducers
 const rootReducer = combineReducers({
   // These are the key value pairs for the reducers
   getAllPizzaReducer: getAllPizzaReducer,
   cartReducer: cartReducer,
+  registerUserReducer: registerUserReducer,
+  loginUserReducer: loginUserReducer,
 });
 
 // Get locally stored cart items
@@ -18,9 +21,16 @@ const cartItems = localStorage.getItem("cartItems")
   ? JSON.parse(localStorage.getItem("cartItems"))
   : [];
 
+const currentUser = localStorage.getItem("currentUser")
+  ? JSON.parse(localStorage.getItem("currentUser"))
+  : null;
+
 const initialState = {
   cartReducer: {
     cartItems: cartItems,
+  },
+  loginUserReducer: {
+    currentUser: currentUser,
   },
 };
 

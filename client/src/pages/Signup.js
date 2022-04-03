@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
+import { useSelector, useDispatch } from "react-redux";
+import { registerUser } from "../actions/userAction";
 
 const Signup = () => {
   const [name, setName] = useState("");
@@ -7,12 +9,18 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  const dispatch = useDispatch();
+
   const signupHandler = () => {
     if (password !== confirmPassword) {
       alert("Passwords do not match!");
     } else {
       const user = { name, email, password, confirmPassword };
-
+      dispatch(registerUser(user));
+      setName("");
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
     }
   };
 
