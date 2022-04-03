@@ -6,7 +6,7 @@ import { MdLocalOffer } from "react-icons/md";
 const TopBar = () => {
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar expand="lg" style={{ backgroundColor: "#CB3B14"}}>
         <Container fluid>
           <h6 className="text-light">
             <MdLocalOffer className="text-warning" /> &nbsp; Free Home
