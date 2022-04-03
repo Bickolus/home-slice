@@ -8,6 +8,10 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Policy from "./components/Policy";
 import Homepage from "./pages/Homepage";
+import CartPage from "./pages/Cart";
+import Signup  from "./pages/Signup";
+import Login from "./pages/Login";
+import OrderPage from "./pages/OrderPage";
 
 function App() {
   return (
@@ -15,10 +19,14 @@ function App() {
       <TopBar />
       <NavBar />
       <Switch>
-        <Route path="/about" component={About} exact />
+        <Route path="/cart" component={CartPage} exact />
+        <Route path="/orders" component={OrderPage} exact />
         <Route path="/contact" component={Contact} exact />
         <Route path="/policy" component={Policy} exact />
-        <Route path="/" component={Homepage} exact />
+        <Route path="/about" component={About} exact />
+        <Route path="/login" component={Login} exact />
+        <Route path="/signup" component={Signup} exact />
+        <Route path="/" component={Homepage} />
       </Switch>
     </BrowserRouter>
   );

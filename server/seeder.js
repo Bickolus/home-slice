@@ -5,11 +5,11 @@ const connectDB = require("./config/connection");
 const Pizza = require("./models/Pizza.js");
 const Pizzas = require("../client/src/pizza-data");
 
-//config dot env and mongodb conn file
+// Configurate dotenv and connect to server
 dotenv.config();
 connectDB();
 
-//import data
+// This is how we will import data
 const importData = async () => {
     try {
         await Pizza.deleteMany();
@@ -17,7 +17,7 @@ const importData = async () => {
             return { ...pizza };
         });
         await Pizza.insertMany(sampleData);
-        console.log("DATA IMPOrted");
+        console.log("Data imported!");
         process.exit();
     } catch (error) {
         console.log(`${error}`);
@@ -25,4 +25,11 @@ const importData = async () => {
     }
 };
 
-importData();
+// Logic for deleting already made data
+const dataDestroy = () => {};
+
+if (process.argv[2] === "-d") {
+    dataDestroy();
+} else {
+    importData();
+}

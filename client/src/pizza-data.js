@@ -1,4 +1,4 @@
-const pizzas = [
+const Pizzas = [
   {
     name: "Margherita",
     sizes: ["Small", "Medium", "Large"],
@@ -11,7 +11,7 @@ const pizzas = [
     ],
     category: "Vegetarian",
     image: "/images/margherita.jpg",
-    description: "Classic delight with 100% real mozzarella cheese",
+    description: "Good ol' cheese pizza with 100% mozzerella cheese!",
   },
   {
     name: "Farmhouse",
@@ -26,7 +26,7 @@ const pizzas = [
     category: "Vegetarian",
     image: "/images/farmhouse.jpg",
     description:
-      "Delightful combination of onion, capsicum, tomato & grilled mushroom",
+      "Toppings include: onions, capsicum, tomato & grilled mushroom. Perfect for vegetarians!",
   },
   {
     name: "Veggie Paradise",
@@ -40,7 +40,7 @@ const pizzas = [
     ],
     category: "Vegetarian",
     description:
-      "The awesome foursome! Golden corn, black olives, capsicum, red paprika",
+      "Here's a fun one: golden corn, black olives, capsicum, red paprika.",
     image: "/images/veggie_paradise.jpg",
   },
   {
@@ -56,7 +56,7 @@ const pizzas = [
     category: "Non-Vegetarian",
     image: "/images/chicken_golden_delight.jpg",
     description:
-      "Double pepper barbecue chicken, golden corn and extra cheese, true delight",
+      "Mmm! This one has double pepper barbecue chicken, golden corn and extra cheese. You'd love it!",
   },
   {
     name: "Chicken Pepperoni",
@@ -71,10 +71,10 @@ const pizzas = [
     category: "Non-Vegetarian",
     image: "/images/cheesepepperoni.jpg",
     description:
-      "A classic American taste! Relish the delectable flavor of Chicken Pepperoni, topped with extra cheese",
+      "Another classic! Pepperoni with extra cheese. You can't go wrong with this.",
   },
   {
-    name: "Indi Chicken Tikka",
+    name: "Indian Chicken Tikka",
     sizes: ["Small", "Medium", "Large"],
     prices: [
       {
@@ -86,7 +86,7 @@ const pizzas = [
     category: "Non-Vegetarian",
     image: "/images/IndianTandooriChickenTikka.jpg",
     description:
-      "The wholesome flavour of tandoori masala with Chicken tikka, onion, red paprika & mint mayo",
+      "This is what being Desi is all about! Tandoori masala with chicken tikka, onion, red paprika & mint mayo.",
   },
 ];
-export default pizzas;
+module.exports = Pizzas;
