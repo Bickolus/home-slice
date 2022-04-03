@@ -4,7 +4,9 @@
 
 ## Description
 
-(insert desc here)
+  Home Slice is an independent pizza place with its own pizza-ordering application. It is a web-based application that stimulates the foodies (customers) by helping them to order their favorite pizzas through the internet.
+  Home Slice greatly simplifies the ordering process for both the customer and the restaurant. The system presents an interactive and up-to-date menu with all available options in an easy to use manner. Customers can choose items to place an order which will land in the cart. Customers can view all the order details in the cart before checking out. At the end, the customer gets order confirmation details. Once the order is placed it is entered in the database and retrieved in real time. This allows restaurant employees to quickly go through the orders as they are received and process all orders efficiently and effectively with minimal delays and confusion.
+
 
 > Github Repository Link: [https://github.com/Bickolus/home-slice](https://github.com/Bickolus/home-slice)
 >
