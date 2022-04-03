@@ -1,8 +1,9 @@
 import React from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { FaMinusCircle, FaPlusCircle, FaTrash } from "react-icons/fa";
 import { addToCart, deleteFromCart } from "../actions/cartAction";
+import Checkout from "../components/Checkout";
 
 const CartPage = () => {
   const cartState = useSelector((state) => state.cartReducer);
@@ -74,7 +75,7 @@ const CartPage = () => {
             <h1>Payment Info</h1>
             <h4>Subtotal:</h4>
             <h4>${subTotal}</h4>
-            <Button>Checkout</Button>
+            <Checkout subTotal={subTotal}/>
           </Col>
         </Row>
       </Container>

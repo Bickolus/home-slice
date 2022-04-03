@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Container, Row, Col } from "react-bootstrap";
 import { getAllPizzas } from "../actions/pizzaAction";
 import Pizza from "../components/Pizza";
+import Loading from "../components/Loading"
+import Error from "../components/Error";
 
 const Homepage = () => {
   const dispatch = useDispatch();
@@ -21,9 +23,9 @@ const Homepage = () => {
     <>
       <Container>
         {loading ? (
-          <h1>Loading...</h1>
+          <Loading />
         ) : error ? (
-          <h1>Error while fetching!</h1>
+          <Error error="Something went wrong!" />
         ) : (
           <Row>
             {pizzas.map((pizza) => (

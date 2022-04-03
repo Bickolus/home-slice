@@ -29,7 +29,8 @@ app.use(express.urlencoded({ extended: true }));
 
 // Route
 app.use("/api/pizzas", require("./routes/pizzaRoute"));
-app.use("/api/users", require("./routes/userRoute"))
+app.use("/api/users", require("./routes/userRoute"));
+app.use("/api/orders", require("./routes/orderRoute"));
 
 
 // app.use(routes);

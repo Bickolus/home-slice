@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Card, Button, Row, Col, Modal } from "react-bootstrap";
 
 // Imports for cart functionality
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addToCart } from "../actions/cartAction";
 
 const Pizza = ({ pizza }) => {

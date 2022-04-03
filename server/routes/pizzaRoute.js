@@ -18,7 +18,7 @@ router.post("/addpizza", async (req, res) => {
       const newPizza = new Pizza({
         name: pizza.name,
         image: pizza.image,
-        varients: ["small", "medium", "larg"],
+        sizes: ["Small", "Medium", "Large"],
         description: pizza.description,
         category: pizza.category,
         prices: [pizza.prices],
@@ -29,7 +29,5 @@ router.post("/addpizza", async (req, res) => {
       res.json({ message: error });
     }
   });
-
-  
 
 module.exports = router;

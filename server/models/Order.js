@@ -4,11 +4,11 @@ const orderSchema = mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, "order name required"],
+      required: [true, "Name of the order is required!"],
     },
     email: {
       type: String,
-      required: [true, "email is required"],
+      required: [true, "Email is required!"],
     },
     userid: {
       type: String,
@@ -19,7 +19,7 @@ const orderSchema = mongoose.Schema(
     },
     orderAmount: {
       type: String,
-      //   required: true,
+      // required: true,
     },
     isDelivered: {
       type: Boolean,
@@ -27,10 +27,10 @@ const orderSchema = mongoose.Schema(
     },
     transactionId: {
       type: String,
-      //   required: true,
+      // required: true,
     },
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model("order", orderSchema);
+module.exports = mongoose.model("Order", orderSchema);

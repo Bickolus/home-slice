@@ -11,6 +11,7 @@ import Homepage from "./pages/Homepage";
 import CartPage from "./pages/Cart";
 import Signup  from "./pages/Signup";
 import Login from "./pages/Login";
+import OrderPage from "./pages/OrderPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route path="/cart" component={CartPage} exact />
+        <Route path="/orders" component={OrderPage} exact />
         <Route path="/contact" component={Contact} exact />
         <Route path="/policy" component={Policy} exact />
         <Route path="/about" component={About} exact />

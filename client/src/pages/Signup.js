@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../actions/userAction";
+import Error from "../components/Error";
+import Loading from "../components/Loading";
+import Success from "../components/Success";
 
 const Signup = () => {
   const [name, setName] = useState("");
@@ -10,6 +13,9 @@ const Signup = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const dispatch = useDispatch();
+
+  const registerState = useSelector((state) => state.registerUserReducer);
+  const { loading, success, error } = registerState;
 
   const signupHandler = () => {
     if (password !== confirmPassword) {
@@ -27,6 +33,9 @@ const Signup = () => {
   return (
     <>
       <Container>
+        {loading && <Loading />}
+        {success && <Success success="Registration successful!" />}
+        {error && <Error error="Something went wrong!" />}
         <Form>
           <h2>Registration</h2>
 
