@@ -3,8 +3,9 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Container, Row, Col } from "react-bootstrap";
 import { getAllPizzas } from "../actions/pizzaAction";
+import Filter from "../components/Filter";
 import Pizza from "../components/Pizza";
-import Loading from "../components/Loading"
+import Loading from "../components/Loading";
 import Error from "../components/Error";
 
 const Homepage = () => {
@@ -28,8 +29,9 @@ const Homepage = () => {
           <Error error="Something went wrong!" />
         ) : (
           <Row>
+            <Filter />
             {pizzas.map((pizza) => (
-              <Col md={4}>
+              <Col md={4} key={pizza._id}>
                 <Pizza pizza={pizza} />
               </Col>
             ))}

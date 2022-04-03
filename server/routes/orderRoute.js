@@ -54,4 +54,19 @@ router.post("/placeorder", async (req, res) => {
   }
 });
 
+// Route to retriever a User's Order
+router.post("/getuserorder", async (req, res) => {
+  const { userid } = req.body;
+  try {
+    // Sorted by descending order
+    const orders = await Order.find({ userid }).sort({ _id: "-1" });
+    res.status(200).send(orders);
+  } catch (error) {
+    res.status(400).json({
+      message: "Uh oh! Something went wrong!",
+      error: error.stack,
+    });
+  }
+});
+
 module.exports = router;
