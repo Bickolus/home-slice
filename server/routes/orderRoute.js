@@ -69,4 +69,17 @@ router.post("/getuserorder", async (req, res) => {
   }
 });
 
+// Route to see all user orders, for the Admin Panel
+router.get("/getalluserorders", async (req, res) => {
+  try {
+    const orders = await Order.find({});
+    res.status(200).send(orders);
+  } catch (error) {
+    res.status(400).json({
+      message: "Whoops, something went wrong!",
+      error: error.stack,
+    });
+  }
+});
+
 module.exports = router;
