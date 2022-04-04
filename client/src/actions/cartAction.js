@@ -16,6 +16,11 @@ export const addToCart = (pizza, quantity, size) => (dispatch, getState) => {
   } else {
     if (cartItem.quantity < 1) {
       dispatch({ type: "DELETE_FROM_CART", payload: pizza });
+
+      localStorage.setItem(
+        "cartItems",
+        JSON.stringify(getState().cartReducer.cartItems)
+      );
     } else {
       // Will successfully create item
       dispatch({ type: "ADD_TO_CART", payload: cartItem });
@@ -31,7 +36,8 @@ export const addToCart = (pizza, quantity, size) => (dispatch, getState) => {
 export const deleteFromCart = (pizza) => (dispatch, getState) => {
   dispatch({ type: "DELETE_FROM_CART", payload: pizza });
 
-  const cartItems = getState().cartReducer.cartitems;
-
-  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  localStorage.setItem(
+    "cartItems",
+    JSON.stringify(getState().cartReducer.cartItems)
+  );
 };

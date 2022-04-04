@@ -21,7 +21,7 @@ const Login = () => {
 
   return (
     <>
-      <Container>
+      <Container style={{ marginTop: "50px" }}>
         <Form>
           <h2>Login</h2>
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -43,7 +43,10 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
-          <Button variant="primary" onClick={loginHandler}>
+          <Button
+            style={{ backgroundColor: "#CB3B14", borderColor: "#CB3B14" }}
+            onClick={loginHandler}
+          >
             Log Me In!
           </Button>
         </Form>
