@@ -10,7 +10,7 @@
 
 > Github Repository Link: [https://github.com/Bickolus/home-slice](https://github.com/Bickolus/home-slice)
 >
-> Deployed App (Heroku) Link:
+> Deployed App (Heroku) Link: [https://project-homeslice.herokuapp.com/](https://project-homeslice.herokuapp.com/)
 
 ## Table of Contents
 
@@ -23,31 +23,44 @@
 
 ## Installation
 
-Type "npm install" in the console to install the dependancies that this application requires.
+Type "npm install" in the console to install the dependancies that this application requires. You would need to connect it to a MongoDB atlas cluster in order for the database stuff to be connected properly.
 
 ## Usage
 
-(usage instructions)
-
-Alternatively, check out the deployed Heroku link if you wish to check out the application functionalities but do not want your own copy.
+Check out the deployed Heroku link if you wish to check out the application functionalities but do not want your own copy.
 
 ## Example
 
 ### Homepage
 
+![Home Slice Homepage](./screenshots/homeslice1.png)
 
-### Login/Sign Up Page
+### Sign Up Page
 
+![Home Slice Sign Up](./screenshots/homeslice2.png)
+
+### Cart Page
+
+![Home Slice Cart](./screenshots/homeslice3.png)
 
 ### Order Page
 
+![Home Slice Cart](./screenshots/homeslice4.png)
 
 ## Technologies Used 
 
+* Axios
 * MongoDB
-* Apollo-express
+* Mongoose
+* Express
 * Node.js
 * React.js
+* React Icons
+* React Redux
+* Redux Thunk
+* React Bootstrap
+* Stripe (React Stripe)
+* Morgan
 
 ## License
 
