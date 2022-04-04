@@ -9,8 +9,8 @@ const Filter = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="p-4 mt-4" style={{backgroundColor: '#F8E46C'}}>
-      <Form >
+    <div className="p-4 mt-4" style={{ backgroundColor: "#F8E46C" }}>
+      <Form>
         <Row>
           <Col>
             <select
@@ -24,7 +24,8 @@ const Filter = () => {
             </select>
           </Col>
           <Col>
-            <Button style={{backgroundColor: '#CB3B14'}}
+            <Button
+              style={{ backgroundColor: "#CB3B14", borderColor: "#CB3B14" }}
               onClick={() => {
                 dispatch(filterPizza(searchKey, category));
               }}

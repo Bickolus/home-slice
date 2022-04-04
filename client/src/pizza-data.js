@@ -98,10 +98,10 @@ const Pizzas = [
         Large: 899.99,
       },
     ],
-    category: "Non-Vegetarian",
-    image: "/images/TheSalSpecial.jpg",
+    category: "Vegetarian",
+    image: "/images/TheSalSpecial.png",
     description:
-      "An eggplant and parmasean cheese pizza that is known you make you better at coding when eaten. It takes a special person to order this one. Are you that person?",
+      "A unique eggplants-and-parmesan pizza topped with tomatoes and fresh basil leaves. Made with an incredibly rare breed of eggplants that is known to make you better at logical problem solving when eaten. It takes a special person to order this one. Are you that person?",
   },
 ];
 module.exports = Pizzas;

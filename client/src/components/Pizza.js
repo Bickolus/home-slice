@@ -20,7 +20,13 @@ const Pizza = ({ pizza }) => {
 
   return (
     <>
-      <Card style={{ width: "18rem", marginTop: "20px", backgroundColor: '#F28C28' }}>
+      <Card
+        style={{
+          width: "18rem",
+          marginTop: "20px",
+          backgroundColor: "#ffebad",
+        }}
+      >
         <Card.Img
           variant="top"
           src={pizza.image}
@@ -35,10 +41,7 @@ const Pizza = ({ pizza }) => {
             <Row>
               <Col md={6}>
                 <h6>Size</h6>
-                <select
-                  value={size}
-                  onChange={(e) => setSize(e.target.value)}
-                >
+                <select value={size} onChange={(e) => setSize(e.target.value)}>
                   {pizza.sizes.map((size) => (
                     <option key={size}>{size}</option>
                   ))}
@@ -60,8 +63,8 @@ const Pizza = ({ pizza }) => {
           <Row>
             <Col md={6}>Price: ${pizza.prices[0][size] * quantity} CAD</Col>
             <Col md={6}>
-              <Button 
-                style={{backgroundColor: '#CB3B14'}}
+              <Button
+                style={{ backgroundColor: "#CB3B14", borderColor: "#CB3B14" }}
                 onClick={addToCartHandler}
                 className="text-white"
               >

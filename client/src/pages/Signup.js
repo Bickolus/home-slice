@@ -32,7 +32,7 @@ const Signup = () => {
 
   return (
     <>
-      <Container>
+      <Container style={{ marginTop: "50px" }}>
         {loading && <Loading />}
         {success && <Success success="Registration successful!" />}
         {error && <Error error="Something went wrong!" />}
@@ -82,7 +82,10 @@ const Signup = () => {
             />
           </Form.Group>
 
-          <Button variant="primary" onClick={signupHandler}>
+          <Button
+            style={{ backgroundColor: "#CB3B14", borderColor: "#CB3B14" }}
+            onClick={signupHandler}
+          >
             Sign Me Up!
           </Button>
         </Form>

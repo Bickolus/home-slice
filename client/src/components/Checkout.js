@@ -18,18 +18,20 @@ const Checkout = ({ subTotal }) => {
   };
   return (
     <>
-    {loading && <Loading />}
-    {error && <Error error="Something went wrong!" />}
-    {success && <Success success="Your order has been placed!" />}
-    <StripeCheckout
-      amount={subTotal * 100}
-      shippingAddress
-      token={tokenHandler}
-      stripeKey="pk_test_51Kj4sRDoo0o8MzWPn2WTJYgD1uMY50IS9n5xlwAvgms5WdlgNieq32ML5RPfAVwY1NnIxZAbTk8brrdX5S2uDLsk00eLrzEMRg"
-      currency="CAD"
-    >
-      <Button style={{backgroundColor: '#CB3B14'}}>Pay with Card</Button>
-    </StripeCheckout>
+      {loading && <Loading />}
+      {error && <Error error="Something went wrong!" />}
+      {success && <Success success="Your order has been placed!" />}
+      <StripeCheckout
+        amount={subTotal * 100}
+        shippingAddress
+        token={tokenHandler}
+        stripeKey="pk_test_51Kj4sRDoo0o8MzWPn2WTJYgD1uMY50IS9n5xlwAvgms5WdlgNieq32ML5RPfAVwY1NnIxZAbTk8brrdX5S2uDLsk00eLrzEMRg"
+        currency="CAD"
+      >
+        <Button style={{ backgroundColor: "#CB3B14", borderColor: "#CB3B14" }}>
+          Pay with Card
+        </Button>
+      </StripeCheckout>
     </>
   );
 };
