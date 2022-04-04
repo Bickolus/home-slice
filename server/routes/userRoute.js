@@ -2,6 +2,25 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
 
+router.get("/getallusers", async (req, res) => {
+  try {
+    const users = await User.find({});
+    res.status(200).send(users);
+  } catch (error) {
+    res.status(404).json({ message: error.stack });
+  }
+});
+
+router.post("/deleteuser", async (req, res) => {
+  const userid = req.body.userid;
+  try {
+    await User.findOneAndDelete({ _id: userid });
+    res.status(200).send("This user has been deleted.");
+  } catch (error) {
+    res.status(404).json({ message: error.stack });
+  }
+});
+
 router.post("/signup", (req, res) => {
   const { name, email, password } = req.body;
   const newUser = new User({ name, email, password });
@@ -10,7 +29,7 @@ router.post("/signup", (req, res) => {
     newUser.save();
     res.status(200).json({
       success: true,
-      message: "User Registration Successful!",
+      message: "User registration successful!",
     });
   } catch (error) {
     res.status(400).json({
@@ -35,12 +54,12 @@ router.post("/login", async (req, res) => {
       res.status(200).send(currentUser);
     } else {
       res.status(400).json({
-        message: "Failed to Log In!",
+        message: "Failed to log in!",
       });
     }
   } catch (error) {
     res.status(404).json({
-      message: "Something went wrong!",
+      message: "Oops! Something went wrong!",
     });
   }
 });
